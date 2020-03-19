@@ -11,7 +11,7 @@ def get_data():
 
     misspelled = {"Telengana": "Telangana"}
     thead = page.xpath('//thead/tr/th/strong')
-    default_headings = ['S. No.', 'Name of State / UT', 'Total Confirmed cases (Indian National)', 'Total Confirmed cases ( Foreign National )', 'Cured/Discharged', 'Death']
+    default_headings = ['S. No.', 'Name of State / UT', 'Total Confirmed cases (Indian National)', 'Total Confirmed cases ( Foreign National )', 'Cured/Discharged/Migrated', 'Death']
     found_headings = [element.text.replace("\n", "") for element in thead]
 
     data = {}
