@@ -36,7 +36,7 @@ def get_data():
             data_item['helpline'] = helpline_states[state] if state in helpline_states else ""
             data_item['total_confirmed_cases_indian_national'] = columns[found_headings.index(default_headings[2])]
             data_item['total_confirmed_cases_foreign_national'] = columns[found_headings.index(default_headings[3])]
-            data_item['cured_or_discharged'] = columns[found_headings.index(default_headings[4])]
+            data_item['cured_or_discharged_or_migrated'] = columns[found_headings.index(default_headings[4])]
             data_item['death'] = columns[found_headings.index(default_headings[5])]
         except Exception as e:
             print(e)
