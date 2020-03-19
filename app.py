@@ -7,7 +7,7 @@ from services.get_helpline_numbers import helpline_numbers
 app = Flask(__name__)
 CORS(app)
 
-app.config.from_pyfile('settings/settings.py');
+app.config.from_pyfile('settings/settings.py')
 
 @app.route('/data')
 def data():
