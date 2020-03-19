@@ -19,7 +19,7 @@ def data():
         'central_helpline': "+91-11-23978046"
     })
 
-@app.route('/helplines')
+@app.route('/')
 def helplines():
     return jsonify({
         'helplines': helpline_numbers(),
