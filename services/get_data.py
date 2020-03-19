@@ -9,7 +9,7 @@ def get_data():
     page = BeautifulSoup(r.text, 'html5lib')
     page = HTML(html=str(page))
 
-    misspelled = {"Telengana": "Telangana"}
+    alternate_name = {"Telengana": "Telangana", "Pondicherry": "Puducherry"}
     thead = page.xpath('//thead/tr/th/strong')
     default_headings = ['S. No.', 'Name of State / UT', 'Total Confirmed cases (Indian National)', 'Total Confirmed cases ( Foreign National )', 'Cured/Discharged/Migrated', 'Death']
     found_headings = [element.text.replace("\n", "") for element in thead]
@@ -25,8 +25,8 @@ def get_data():
             
             state = columns[found_headings.index(default_headings[1])].replace("\n", "")
             
-            if state in misspelled:
-                state = misspelled[state]
+            if state in alternate_name:
+                state = alternate_name[state]
             
             if not state:
                 continue
