@@ -11,7 +11,7 @@ All endpoints are located at https://dsd7azv2bl.execute-api.ap-south-1.amazonaws
 
 You can open the URL in your browser to further inspect the response. Or you can make this curl call in your terminal to see the prettified response:
 
-curl https://dsd7azv2bl.execute-api.ap-south-1.amazonaws.com/production/data | json_pp
+`curl https://dsd7azv2bl.execute-api.ap-south-1.amazonaws.com/production/data | json_pp`
 
 ## API Endpoints
 
