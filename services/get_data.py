@@ -10,19 +10,18 @@ def get_data():
     page = HTML(html=str(page))
 
     alternate_name = {"Telengana": "Telangana", "Pondicherry": "Puducherry"}
-    thead = page.xpath('//thead/tr/th/strong')
-    default_headings = ['S. No.', 'Name of State / UT', 'Total Confirmed cases (Indian National)', 'Total Confirmed cases ( Foreign National )', 'Cured/Discharged/Migrated', 'Death']
+    thead = page.xpath("//div[@id='cases']/div/div/table/thead/tr/th/strong")
+    default_headings = ["S. No.","Name of State / UT","Total Confirmed cases (Indian National)","Total Confirmed cases ( Foreign National )","Cured/Discharged/Migrated","Death"]
     found_headings = [element.text.replace("\n", "") for element in thead]
 
     data = {}
 
-    table_rows = page.xpath('//table/tbody/tr')
+    table_rows = page.xpath("//div[@id='cases']/div/div/table/tbody/tr")
 
     for row in table_rows:
         data_item = {}
         try:
             columns = row.xpath("//td/text()")
-            
             state = columns[found_headings.index(default_headings[1])].replace("\n", "")
             
             if state in alternate_name:

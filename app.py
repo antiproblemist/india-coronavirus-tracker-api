@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_cors import CORS
 from flask import jsonify
-from .services.get_data import get_data
-from .services.get_helpline_numbers import helpline_numbers
+from services.get_data import get_data
+from services.get_helpline_numbers import helpline_numbers
 
 app = Flask(__name__)
 CORS(app)
