@@ -9,7 +9,7 @@ Provides data about Coronavirus outbreak in India. Includes number of confirmed 
 
 All endpoints are located at https://dsd7azv2bl.execute-api.ap-south-1.amazonaws.com/production and are accessible via https. For instance: you can get data per state by using this URL: https://dsd7azv2bl.execute-api.ap-south-1.amazonaws.com/production/data
 
-You can open the URL in your browser to further inspect the response. Or you can make this curl call in your terminal to see the prettified response:
+You can open the URL in your browser to further inspect the response or you can make this curl call in your terminal to see the prettified response:
 
 `curl https://dsd7azv2bl.execute-api.ap-south-1.amazonaws.com/production/data | json_pp`
 
@@ -36,8 +36,8 @@ You can open the URL in your browser to further inspect the response. Or you can
 
 | Response Item | Description | Type |
 | ------ | ------ | ------ |
-| India_coronavirus | The parent key that contains all affected states | String |
-| {state} | The state key that contains the data of that affected state | String |
+| India_coronavirus | The parent key that contains all affected states | Object |
+| {state} | The state key that contains the data of that affected state | Object |
 | total_confirmed_cases_indian_national | The number of Indian Nationals who have been confirmed | String |
 | total_confirmed_cases_foreign_national | The number of Foreign Nationals who have been confirmed | String |
 | cured_or_discharged_or_migrated | The number of People who have been Cured/Discharged/Migrated | String |
@@ -63,7 +63,7 @@ helplines": {
 
 ## Maintenance
 
-Since this API relies upon data that is scraped from an HTML table, there are sometimes code changes thate need to be done based on the structural changes done on the website
+Since this API relies upon data that is scraped from an HTML table, there are sometimes code changes that need to be done based on the structural changes done on the website
 
 ## Development Requirements
 
