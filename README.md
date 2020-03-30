@@ -1,6 +1,6 @@
 # India Coronavirus Tracker Api
 
-Provides data about Coronavirus outbreak in India. Includes number of confirmed cases that involve Indian nationals and confirmed cases that involve foreign nationals, Cured/Dischared/Migrated number and the number of Deaths.
+Provides data about Coronavirus outbreak in India. Includes number of confirmed cases, Cured/Dischared/Migrated number and the number of Deaths.
 
 ## Available data-sources
 *  This API collects data direclty from  [Ministry of Health and Family Welfare](https://www.mohfw.gov.in/)
@@ -26,8 +26,7 @@ You can open the URL in your browser to further inspect the response or you can 
     "cured_or_discharged_or_migrated": "0",
     "death": "0",
     "helpline": "03192-232102",
-    "total_confirmed_cases_foreign_national": "0",
-    "total_confirmed_cases_indian_national": "1"
+    "total_confirmed_cases": "0",
 },
 ...
 ```
@@ -38,8 +37,7 @@ You can open the URL in your browser to further inspect the response or you can 
 | ------ | ------ | ------ |
 | India_coronavirus | The parent key that contains all affected states | Object |
 | {state} | The state key that contains the data of that affected state | Object |
-| total_confirmed_cases_indian_national | The number of Indian Nationals who have been confirmed | String |
-| total_confirmed_cases_foreign_national | The number of Foreign Nationals who have been confirmed | String |
+| total_confirmed_cases | The number of confirmed cases | String |
 | cured_or_discharged_or_migrated | The number of People who have been Cured/Discharged/Migrated | String |
 | death | The number of People who have Died | String |
 | helpline | The helpline number of that affected state | String |
