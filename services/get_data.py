@@ -9,9 +9,8 @@ def get_data():
     page = BeautifulSoup(r.text, 'html5lib')
     page = HTML(html=str(page))
 
-    alternate_name = {"Telengana": "Telangana", "Pondicherry": "Puducherry"}
     thead = page.xpath("//div[@id='cases']/div/div/table/thead/tr/th/strong")
-    default_headings = ["S. No.","Name of State / UT","Total Confirmed cases (Indian National)","Total Confirmed cases ( Foreign National )","Cured/Discharged/Migrated","Death"]
+    default_headings = ["S. No.","Name of State / UT","Total Confirmed cases *","Cured/Discharged/Migrated","Death"]
     found_headings = [element.text.replace("\n", "") for element in thead]
 
     data = {}
@@ -23,20 +22,16 @@ def get_data():
         try:
             columns = row.xpath("//td/text()")
             state = columns[found_headings.index(default_headings[1])].replace("\n", "")
-            
-            if state in alternate_name:
-                state = alternate_name[state]
-            
+          
             if not state:
                 continue
 
             helpline_states = helpline_numbers()
 
             data_item['helpline'] = helpline_states[state] if state in helpline_states else ""
-            data_item['total_confirmed_cases_indian_national'] = columns[found_headings.index(default_headings[2])]
-            data_item['total_confirmed_cases_foreign_national'] = columns[found_headings.index(default_headings[3])]
-            data_item['cured_or_discharged_or_migrated'] = columns[found_headings.index(default_headings[4])]
-            data_item['death'] = columns[found_headings.index(default_headings[5])]
+            data_item['total_confirmed_cases'] = columns[found_headings.index(default_headings[2])]
+            data_item['cured_or_discharged_or_migrated'] = columns[found_headings.index(default_headings[3])]
+            data_item['death'] = columns[found_headings.index(default_headings[4])]
         except Exception as e:
             print(e)
             continue
