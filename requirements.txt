@@ -9,7 +9,7 @@ colorama==0.4.3
 cssselect==1.1.0
 fake-useragent==0.1.11
 Flask==1.1.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 html5lib==1.0.1
 idna==2.9
 isort==4.3.21
