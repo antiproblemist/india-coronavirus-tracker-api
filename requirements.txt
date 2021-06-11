@@ -33,6 +33,6 @@ tqdm==4.43.0
 urllib3==1.25.8
 w3lib==1.21.0
 webencodings==0.5.1
-websockets==8.1
+websockets==9.1
 Werkzeug==1.0.0
 wrapt==1.11.2
